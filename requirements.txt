@@ -1,0 +1,5 @@
+scikit-learn==0.20.1
+scipy==1.1.0
+seaborn==0.9.0
+simplejson==3.16.0
+sodapy==1.5.2
