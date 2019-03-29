@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Exploratory Data Analysis - Chicago.local</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Exploratory Data Analysis";
+    var mkdocs_page_input_path = "EDA/ChicagoFood.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Chicago.local</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Modeling Critical Food Violation by Food Establishments in the City of Chicago</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Exploratory Data Analysis
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#project-plan">
+      Project Plan
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l2">
+    <a href="#project-goal">
+      Project Goal
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l2">
+    <a href="#data-set-and-features">
+      Data Set and Features
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+
+
+      
+
+  <li class="toctree-l2">
+    <a href="#label-encoding-categorical-variables">
+      Label Encoding categorical variables:
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+
+  
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Chicago.local</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Modeling Critical Food Violation by Food Establishments in the City of Chicago &raquo;</li>
+        
+      
+    
+    <li>Exploratory Data Analysis</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="project-plan">Project Plan</h3>
+<ul>
+<li>Project Goal</li>
+<li>Dataset and features</li>
+<li>Exploratory data analysis (EDA) </li>
+<li>Patterns, insights, pecularities of data</li>
+<li>Data preprocessing</li>
+<li>Feature engineering and description</li>
+<li>Cross-validation, hyperparameter tuning</li>
+<li>Validation and learning curves</li>
+<li>Prediction for hold-out and test samples</li>
+<li>Model evaluation with metrics description</li>
+<li>Conclusions</li>
+</ul>
+<h3 id="project-goal">Project Goal</h3>
+<h3 id="data-set-and-features">Data Set and Features</h3>
+<h3 id="exploratory-data-analysis">Exploratory Data Analysis</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">#important libraries</span>
+<span style="color: #555555">%</span>matplotlib inline
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">warnings</span>
+warnings<span style="color: #555555">.</span>filterwarnings(<span style="color: #CC3300">&#39;ignore&#39;</span>)
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">json</span>
+sns<span style="color: #555555">.</span>set(rc<span style="color: #555555">=</span>{<span style="color: #CC3300">&#39;figure.figsize&#39;</span>:(<span style="color: #FF6600">12</span>, <span style="color: #FF6600">6</span>),<span style="color: #CC3300">&quot;font.size&quot;</span>:<span style="color: #FF6600">20</span>,<span style="color: #CC3300">&quot;axes.titlesize&quot;</span>:<span style="color: #FF6600">20</span>,<span style="color: #CC3300">&quot;axes.labelsize&quot;</span>:<span style="color: #FF6600">20</span>},style<span style="color: #555555">=</span><span style="color: #CC3300">&quot;darkgrid&quot;</span>)
+<span style="color: #0099FF; font-style: italic">#sns.set(style=&quot;darkgrid&quot;)</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>food_data <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>read_json(<span style="color: #CC3300">&#39;../data/raw/food-inspection.json&#39;</span>, convert_dates <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;inspection_date&#39;</span>])
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>food_data<span style="color: #555555">.</span>head(<span style="color: #FF6600">5</span>)
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>:@computed_region_43wa_7qmu</th>
+      <th>:@computed_region_6mkv_f3dw</th>
+      <th>:@computed_region_awaf_s7ux</th>
+      <th>:@computed_region_bdys_3d7i</th>
+      <th>:@computed_region_vrxf_vc4k</th>
+      <th>address</th>
+      <th>aka_name</th>
+      <th>city</th>
+      <th>dba_name</th>
+      <th>facility_type</th>
+      <th>inspection_date</th>
+      <th>inspection_id</th>
+      <th>inspection_type</th>
+      <th>latitude</th>
+      <th>license_</th>
+      <th>location</th>
+      <th>longitude</th>
+      <th>results</th>
+      <th>risk</th>
+      <th>state</th>
+      <th>violations</th>
+      <th>zip</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>27.0</td>
+      <td>4450.0</td>
+      <td>42.0</td>
+      <td>30.0</td>
+      <td>20.0</td>
+      <td>6248 N CALIFORNIA AVE</td>
+      <td>MUSASHI JAPANESE RESTAURANT</td>
+      <td>CHICAGO</td>
+      <td>MUSASHI JAPANESE RESTAURANT</td>
+      <td>Restaurant</td>
+      <td>2019-03-27</td>
+      <td>2280158</td>
+      <td>Canvass</td>
+      <td>41.995400</td>
+      <td>47917</td>
+      <td>{'type': 'Point', 'coordinates': [-87.69971133...</td>
+      <td>-87.699711</td>
+      <td>No Entry</td>
+      <td>Risk 1 (High)</td>
+      <td>IL</td>
+      <td>None</td>
+      <td>60659.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>29.0</td>
+      <td>22243.0</td>
+      <td>34.0</td>
+      <td>657.0</td>
+      <td>36.0</td>
+      <td>6182 N NORTHWEST HWY</td>
+      <td>WINESTYLES</td>
+      <td>CHICAGO</td>
+      <td>WINESTYLES</td>
+      <td>Restaurant</td>
+      <td>2019-03-27</td>
+      <td>2280117</td>
+      <td>License Re-Inspection</td>
+      <td>41.994044</td>
+      <td>2632296</td>
+      <td>{'type': 'Point', 'coordinates': [-87.80211988...</td>
+      <td>-87.802120</td>
+      <td>Pass</td>
+      <td>Risk 2 (Medium)</td>
+      <td>IL</td>
+      <td>52. SEWAGE &amp; WASTE WATER PROPERLY DISPOSED - C...</td>
+      <td>60631.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>42.0</td>
+      <td>4447.0</td>
+      <td>33.0</td>
+      <td>316.0</td>
+      <td>73.0</td>
+      <td>10210 S CENTRAL PARK AVE</td>
+      <td>STARBUCKS (ST XAVIER MORRIS HALL)</td>
+      <td>CHICAGO</td>
+      <td>STARBUCKS</td>
+      <td>Restaurant</td>
+      <td>2019-03-27</td>
+      <td>2280150</td>
+      <td>Canvass</td>
+      <td>41.707481</td>
+      <td>2464644</td>
+      <td>{'type': 'Point', 'coordinates': [-87.71131771...</td>
+      <td>-87.711318</td>
+      <td>Pass</td>
+      <td>Risk 2 (Medium)</td>
+      <td>IL</td>
+      <td>10. ADEQUATE HANDWASHING SINKS PROPERLY SUPPLI...</td>
+      <td>60655.0</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>36.0</td>
+      <td>14914.0</td>
+      <td>22.0</td>
+      <td>92.0</td>
+      <td>38.0</td>
+      <td>204 N WELLS ST</td>
+      <td>THE VEGGIE GRILL</td>
+      <td>CHICAGO</td>
+      <td>THE VEGGIE GRILL, INC</td>
+      <td>Restaurant</td>
+      <td>2019-03-25</td>
+      <td>2280011</td>
+      <td>Canvass</td>
+      <td>41.885863</td>
+      <td>2560625</td>
+      <td>{'type': 'Point', 'coordinates': [-87.63408111...</td>
+      <td>-87.634081</td>
+      <td>Pass w/ Conditions</td>
+      <td>Risk 1 (High)</td>
+      <td>IL</td>
+      <td>1. PERSON IN CHARGE PRESENT, DEMONSTRATES KNOW...</td>
+      <td>60606.0</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>42.0</td>
+      <td>22212.0</td>
+      <td>33.0</td>
+      <td>380.0</td>
+      <td>74.0</td>
+      <td>10939 S WESTERN AVE</td>
+      <td>SEE THRU CHINESE KITCHEN</td>
+      <td>CHICAGO</td>
+      <td>SEE THRU CHINESE KITCHEN</td>
+      <td>Restaurant</td>
+      <td>2019-03-25</td>
+      <td>2279985</td>
+      <td>Canvass Re-Inspection</td>
+      <td>41.694221</td>
+      <td>36468</td>
+      <td>{'type': 'Point', 'coordinates': [-87.68108589...</td>
+      <td>-87.681086</td>
+      <td>Pass</td>
+      <td>Risk 1 (High)</td>
+      <td>IL</td>
+      <td>51. PLUMBING INSTALLED; PROPER BACKFLOW DEVICE...</td>
+      <td>60643.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>food_data <span style="color: #555555">=</span> food_data<span style="color: #555555">.</span>drop(food_data<span style="color: #555555">.</span>columns[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">5</span>], axis<span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+shape <span style="color: #555555">=</span> food_data<span style="color: #555555">.</span>shape
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot; So there are </span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> rows and </span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> columns in the data&quot;</span> <span style="color: #555555">%</span> (shape[<span style="color: #FF6600">0</span>], shape[<span style="color: #FF6600">1</span>]))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span> So there are 1000 rows and 17 columns in the data
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>food_data<span style="color: #555555">.</span>info()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;class &#39;pandas.core.frame.DataFrame&#39;&amp;gt;
+Int64Index: 1000 entries, 0 to 999
+Data columns (total 17 columns):
+address            1000 non-null object
+aka_name           991 non-null object
+city               998 non-null object
+dba_name           1000 non-null object
+facility_type      984 non-null object
+inspection_date    1000 non-null datetime64[ns]
+inspection_id      1000 non-null int64
+inspection_type    1000 non-null object
+latitude           993 non-null float64
+license_           1000 non-null int64
+location           993 non-null object
+longitude          993 non-null float64
+results            1000 non-null object
+risk               1000 non-null object
+state              1000 non-null object
+violations         752 non-null object
+zip                998 non-null float64
+dtypes: datetime64[ns](1), float64(3), int64(2), object(11)
+memory usage: 140.6+ KB
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>food_data<span style="color: #555555">.</span>describe()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>inspection_id</th>
+      <th>latitude</th>
+      <th>license_</th>
+      <th>longitude</th>
+      <th>zip</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1.000000e+03</td>
+      <td>993.000000</td>
+      <td>1.000000e+03</td>
+      <td>993.000000</td>
+      <td>998.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2.275233e+06</td>
+      <td>41.893282</td>
+      <td>1.984464e+06</td>
+      <td>-87.700651</td>
+      <td>60632.749499</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.288494e+04</td>
+      <td>0.088847</td>
+      <td>9.140417e+05</td>
+      <td>0.060822</td>
+      <td>28.677772</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2.015568e+06</td>
+      <td>41.677455</td>
+      <td>0.000000e+00</td>
+      <td>-87.914428</td>
+      <td>60091.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.269078e+06</td>
+      <td>41.850451</td>
+      <td>1.878466e+06</td>
+      <td>-87.727943</td>
+      <td>60618.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2.279394e+06</td>
+      <td>41.917238</td>
+      <td>2.373908e+06</td>
+      <td>-87.695312</td>
+      <td>60634.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2.279743e+06</td>
+      <td>41.961208</td>
+      <td>2.621281e+06</td>
+      <td>-87.655086</td>
+      <td>60647.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2.280168e+06</td>
+      <td>42.018813</td>
+      <td>3.808890e+06</td>
+      <td>-87.549716</td>
+      <td>60707.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>plt<span style="color: #555555">.</span>figure(figsize<span style="color: #555555">=</span>(<span style="color: #FF6600">12</span>,<span style="color: #FF6600">5</span>))
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&#39;Number of Inspections&#39;</span>)
+per_week <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame()
+per_week <span style="color: #555555">=</span>  food_data[[<span style="color: #CC3300">&#39;inspection_date&#39;</span>, <span style="color: #CC3300">&#39;inspection_id&#39;</span>]]
+per_week<span style="color: #555555">.</span>index <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>to_datetime(per_week[<span style="color: #CC3300">&#39;inspection_date&#39;</span>])
+per_day <span style="color: #555555">=</span> per_week<span style="color: #555555">.</span>groupby(<span style="color: #CC3300">&#39;inspection_date&#39;</span>)<span style="color: #555555">.</span>count()
+per_week <span style="color: #555555">=</span> per_week<span style="color: #555555">.</span>resample(<span style="color: #CC3300">&#39;W&#39;</span>)<span style="color: #555555">.</span>count()
+plt<span style="color: #555555">.</span>plot(per_day, color<span style="color: #555555">=</span><span style="color: #CC3300">&#39;blue&#39;</span>, label <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;per-day&#39;</span>)
+<span style="color: #0099FF; font-style: italic">#plt.plot(per_week, color = &#39;red&#39;, label = &quot; per week&quot;)</span>
+plt<span style="color: #555555">.</span>legend(loc<span style="color: #555555">=</span><span style="color: #CC3300">&#39;best&#39;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;Figure size 864x360 with 0 Axes&amp;gt;
+
+
+
+
+
+
+Text(0.5, 1.0, &#39;Number of Inspections&#39;)
+
+
+
+
+
+
+[&amp;lt;matplotlib.lines.Line2D at 0x1a3253a470&amp;gt;]
+
+
+
+
+
+
+&amp;lt;matplotlib.legend.Legend at 0x1a32511908&amp;gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_12_4.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>food_data[<span style="color: #CC3300">&#39;results&#39;</span>]<span style="color: #555555">.</span>value_counts()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Pass w/ Conditions    407
+Pass                  241
+Fail                  210
+Out of Business        51
+No Entry               47
+Not Ready              44
+Name: results, dtype: int64
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ax <span style="color: #555555">=</span> sns<span style="color: #555555">.</span>countplot(x<span style="color: #555555">=</span><span style="color: #CC3300">&quot;results&quot;</span>, data<span style="color: #555555">=</span>food_data)
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot;Result of Inspections&quot;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Text(0.5, 1.0, &#39;Result of Inspections&#39;)
+</pre></div>
+
+
+<p><img alt="png" src="../output_14_1.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;</span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> different types of food establishment facilities were inspected during the period and </span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> different types of inpsections were conducted during the period.&quot;</span><span style="color: #555555">%</span> 
+(food_data[<span style="color: #CC3300">&#39;facility_type&#39;</span>]<span style="color: #555555">.</span>nunique(), food_data[<span style="color: #CC3300">&#39;inspection_type&#39;</span>]<span style="color: #555555">.</span>nunique()))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>36 different types of food establishment facilities were inspected during the period and 10 different types of inpsections were conducted during the period.
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>food_data[<span style="color: #CC3300">&#39;inspection_type&#39;</span>]<span style="color: #555555">.</span>value_counts()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Canvass                                   475
+License                                   221
+Canvass Re-Inspection                     130
+Complaint                                  71
+License Re-Inspection                      58
+Complaint Re-Inspection                    34
+Short Form Complaint                        4
+Suspected Food Poisoning                    4
+Recent Inspection                           2
+Suspected Food Poisoning Re-inspection      1
+Name: inspection_type, dtype: int64
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>plt<span style="color: #555555">.</span>figure(figsize<span style="color: #555555">=</span>(<span style="color: #FF6600">12</span>, <span style="color: #FF6600">6</span>))
+ax <span style="color: #555555">=</span> sns<span style="color: #555555">.</span>countplot(y<span style="color: #555555">=</span><span style="color: #CC3300">&quot;inspection_type&quot;</span>, data<span style="color: #555555">=</span>food_data)
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot;Result of Inspections&quot;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;Figure size 864x432 with 0 Axes&amp;gt;
+
+
+
+
+
+
+Text(0.5, 1.0, &#39;Result of Inspections&#39;)
+</pre></div>
+
+
+<p><img alt="png" src="../output_17_2.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>plt<span style="color: #555555">.</span>figure(figsize<span style="color: #555555">=</span>(<span style="color: #FF6600">12</span>, <span style="color: #FF6600">10</span>))
+food_data[<span style="color: #CC3300">&#39;facility_type&#39;</span>]<span style="color: #555555">.</span>value_counts()[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">10</span>]
+ax <span style="color: #555555">=</span> sns<span style="color: #555555">.</span>countplot(y<span style="color: #555555">=</span><span style="color: #CC3300">&quot;facility_type&quot;</span>, data<span style="color: #555555">=</span>food_data)
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot;Types of Facilities Inspected&quot;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;Figure size 864x720 with 0 Axes&amp;gt;
+
+
+
+
+
+
+Restaurant                         631
+School                             121
+Grocery Store                      106
+Children&#39;s Services Facility        19
+Long Term Care                      15
+Bakery                              14
+Daycare Above and Under 2 Years     12
+Mobile Food Preparer                 7
+Catering                             6
+Daycare (2 - 6 Years)                6
+Name: facility_type, dtype: int64
+
+
+
+
+
+
+Text(0.5, 1.0, &#39;Types of Facilities Inspected&#39;)
+</pre></div>
+
+
+<p><img alt="png" src="../output_18_3.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>plt<span style="color: #555555">.</span>figure(figsize<span style="color: #555555">=</span>(<span style="color: #FF6600">12</span>, <span style="color: #FF6600">10</span>))
+food_data[<span style="color: #CC3300">&#39;risk&#39;</span>]<span style="color: #555555">.</span>value_counts()[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">10</span>]
+ax <span style="color: #555555">=</span> sns<span style="color: #555555">.</span>countplot(y<span style="color: #555555">=</span><span style="color: #CC3300">&quot;risk&quot;</span>, data<span style="color: #555555">=</span>food_data)
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot;Risk&quot;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;Figure size 864x720 with 0 Axes&amp;gt;
+
+
+
+
+
+
+Risk 1 (High)      795
+Risk 2 (Medium)    117
+Risk 3 (Low)        84
+All                  4
+Name: risk, dtype: int64
+
+
+
+
+
+
+Text(0.5, 1.0, &#39;Risk&#39;)
+</pre></div>
+
+
+<p><img alt="png" src="../output_19_3.png" /></p>
+<h3 id="label-encoding-categorical-variables">Label Encoding categorical variables:</h3>
+<ol>
+<li>There are couple different ways of label encoding categorical variables. First method is to replace those variables with a dictionary involving key and value pairs of the variables to be encoded:</li>
+</ol>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>results_conv <span style="color: #555555">=</span> {<span style="color: #CC3300">&quot;results&quot;</span> : {<span style="color: #CC3300">&quot;Fail&quot;</span> : <span style="color: #FF6600">0</span>, <span style="color: #CC3300">&quot;Pass&quot;</span> : <span style="color: #FF6600">1</span>, <span style="color: #CC3300">&quot;Pass w/ Conditions&quot;</span> : <span style="color: #FF6600">2</span>, <span style="color: #CC3300">&quot;Out of Business&quot;</span>: <span style="color: #FF6600">3</span>, <span style="color: #CC3300">&quot;No Entry&quot;</span>: <span style="color: #FF6600">4</span> , <span style="color: #CC3300">&quot;Not Ready&quot;</span>: <span style="color: #FF6600">5</span>}}
+food_data<span style="color: #555555">.</span>replace(results_conv, inplace<span style="color: #555555">=</span><span style="color: #336666">True</span>)
+<span style="color: #006699; font-weight: bold">print</span>(food_data<span style="color: #555555">.</span>results<span style="color: #555555">.</span>dtype)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>int64
+</pre></div>
+
+
+<ol>
+<li>Another method is to change their type as categorical variable. Let's convert inspection_type for example as as categorical variable. </li>
+</ol>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>food_data[<span style="color: #CC3300">&quot;inspection_type&quot;</span>] <span style="color: #555555">=</span> food_data[<span style="color: #CC3300">&quot;inspection_type&quot;</span>]<span style="color: #555555">.</span>astype(<span style="color: #CC3300">&#39;category&#39;</span>)
+food_data[<span style="color: #CC3300">&quot;facility_type&quot;</span>] <span style="color: #555555">=</span> food_data[<span style="color: #CC3300">&quot;facility_type&quot;</span>]<span style="color: #555555">.</span>astype(<span style="color: #CC3300">&#39;category&#39;</span>)
+food_data[<span style="color: #CC3300">&quot;risk&quot;</span>] <span style="color: #555555">=</span> food_data[<span style="color: #CC3300">&quot;risk&quot;</span>]<span style="color: #555555">.</span>astype(<span style="color: #CC3300">&#39;category&#39;</span>)
+<span style="color: #006699; font-weight: bold">print</span>(food_data<span style="color: #555555">.</span>inspection_type<span style="color: #555555">.</span>dtype)
+<span style="color: #006699; font-weight: bold">print</span>(food_data<span style="color: #555555">.</span>facility_type<span style="color: #555555">.</span>dtype)
+<span style="color: #006699; font-weight: bold">print</span>(food_data<span style="color: #555555">.</span>risk<span style="color: #555555">.</span>dtype)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>category
+category
+category
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>food_data[<span style="color: #CC3300">&quot;inspection_type_cat&quot;</span>] <span style="color: #555555">=</span> food_data[<span style="color: #CC3300">&quot;inspection_type&quot;</span>]<span style="color: #555555">.</span>cat<span style="color: #555555">.</span>codes
+food_data[<span style="color: #CC3300">&quot;facility_type_cat&quot;</span>] <span style="color: #555555">=</span> food_data[<span style="color: #CC3300">&quot;facility_type&quot;</span>]<span style="color: #555555">.</span>cat<span style="color: #555555">.</span>codes
+food_data[<span style="color: #CC3300">&quot;risk_type_cat&quot;</span>] <span style="color: #555555">=</span> food_data[<span style="color: #CC3300">&quot;risk&quot;</span>]<span style="color: #555555">.</span>cat<span style="color: #555555">.</span>codes
+food_data<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>address</th>
+      <th>aka_name</th>
+      <th>city</th>
+      <th>dba_name</th>
+      <th>facility_type</th>
+      <th>inspection_date</th>
+      <th>inspection_id</th>
+      <th>inspection_type</th>
+      <th>latitude</th>
+      <th>license_</th>
+      <th>location</th>
+      <th>longitude</th>
+      <th>results</th>
+      <th>risk</th>
+      <th>state</th>
+      <th>violations</th>
+      <th>zip</th>
+      <th>inspection_type_cat</th>
+      <th>facility_type_cat</th>
+      <th>risk_type_cat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6248 N CALIFORNIA AVE</td>
+      <td>MUSASHI JAPANESE RESTAURANT</td>
+      <td>CHICAGO</td>
+      <td>MUSASHI JAPANESE RESTAURANT</td>
+      <td>Restaurant</td>
+      <td>2019-03-27</td>
+      <td>2280158</td>
+      <td>Canvass</td>
+      <td>41.995400</td>
+      <td>47917</td>
+      <td>{'type': 'Point', 'coordinates': [-87.69971133...</td>
+      <td>-87.699711</td>
+      <td>4</td>
+      <td>Risk 1 (High)</td>
+      <td>IL</td>
+      <td>None</td>
+      <td>60659.0</td>
+      <td>0</td>
+      <td>27</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6182 N NORTHWEST HWY</td>
+      <td>WINESTYLES</td>
+      <td>CHICAGO</td>
+      <td>WINESTYLES</td>
+      <td>Restaurant</td>
+      <td>2019-03-27</td>
+      <td>2280117</td>
+      <td>License Re-Inspection</td>
+      <td>41.994044</td>
+      <td>2632296</td>
+      <td>{'type': 'Point', 'coordinates': [-87.80211988...</td>
+      <td>-87.802120</td>
+      <td>1</td>
+      <td>Risk 2 (Medium)</td>
+      <td>IL</td>
+      <td>52. SEWAGE &amp; WASTE WATER PROPERLY DISPOSED - C...</td>
+      <td>60631.0</td>
+      <td>5</td>
+      <td>27</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10210 S CENTRAL PARK AVE</td>
+      <td>STARBUCKS (ST XAVIER MORRIS HALL)</td>
+      <td>CHICAGO</td>
+      <td>STARBUCKS</td>
+      <td>Restaurant</td>
+      <td>2019-03-27</td>
+      <td>2280150</td>
+      <td>Canvass</td>
+      <td>41.707481</td>
+      <td>2464644</td>
+      <td>{'type': 'Point', 'coordinates': [-87.71131771...</td>
+      <td>-87.711318</td>
+      <td>1</td>
+      <td>Risk 2 (Medium)</td>
+      <td>IL</td>
+      <td>10. ADEQUATE HANDWASHING SINKS PROPERLY SUPPLI...</td>
+      <td>60655.0</td>
+      <td>0</td>
+      <td>27</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>204 N WELLS ST</td>
+      <td>THE VEGGIE GRILL</td>
+      <td>CHICAGO</td>
+      <td>THE VEGGIE GRILL, INC</td>
+      <td>Restaurant</td>
+      <td>2019-03-25</td>
+      <td>2280011</td>
+      <td>Canvass</td>
+      <td>41.885863</td>
+      <td>2560625</td>
+      <td>{'type': 'Point', 'coordinates': [-87.63408111...</td>
+      <td>-87.634081</td>
+      <td>2</td>
+      <td>Risk 1 (High)</td>
+      <td>IL</td>
+      <td>1. PERSON IN CHARGE PRESENT, DEMONSTRATES KNOW...</td>
+      <td>60606.0</td>
+      <td>0</td>
+      <td>27</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>10939 S WESTERN AVE</td>
+      <td>SEE THRU CHINESE KITCHEN</td>
+      <td>CHICAGO</td>
+      <td>SEE THRU CHINESE KITCHEN</td>
+      <td>Restaurant</td>
+      <td>2019-03-25</td>
+      <td>2279985</td>
+      <td>Canvass Re-Inspection</td>
+      <td>41.694221</td>
+      <td>36468</td>
+      <td>{'type': 'Point', 'coordinates': [-87.68108589...</td>
+      <td>-87.681086</td>
+      <td>1</td>
+      <td>Risk 1 (High)</td>
+      <td>IL</td>
+      <td>51. PLUMBING INSTALLED; PROPER BACKFLOW DEVICE...</td>
+      <td>60643.0</td>
+      <td>1</td>
+      <td>27</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>pass_inspection <span style="color: #555555">=</span> food_data[(food_data[<span style="color: #CC3300">&#39;results&#39;</span>]<span style="color: #555555">==</span> <span style="color: #FF6600">1</span>) <span style="color: #555555">|</span> (food_data[<span style="color: #CC3300">&#39;results&#39;</span>]<span style="color: #555555">==</span> <span style="color: #FF6600">2</span>) ]
+fail_inspection <span style="color: #555555">=</span> food_data[food_data[<span style="color: #CC3300">&#39;results&#39;</span>]<span style="color: #555555">==</span> <span style="color: #FF6600">0</span>]
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">plotly.plotly</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">py</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">plotly.graph_objs</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">go</span>
+mapbox_access_token <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;pk.eyJ1IjoiZGlwYWtyaW1hbCIsImEiOiJjanR0NHp5Z3gxOGVtNGVsbHIxOGI3ZmV6In0.bmrI81LR7L441sUKqDeKmw&quot;</span>
+
+data_pass <span style="color: #555555">=</span> [
+    go<span style="color: #555555">.</span>Scattermapbox(
+        lat<span style="color: #555555">=</span>pass_inspection[<span style="color: #CC3300">&#39;latitude&#39;</span>],
+        lon<span style="color: #555555">=</span>pass_inspection[<span style="color: #CC3300">&#39;longitude&#39;</span>],
+        mode<span style="color: #555555">=</span><span style="color: #CC3300">&#39;markers&#39;</span>,
+        marker<span style="color: #555555">=</span>go<span style="color: #555555">.</span>scattermapbox<span style="color: #555555">.</span>Marker(
+            size<span style="color: #555555">=</span><span style="color: #FF6600">12</span>,
+            color<span style="color: #555555">=</span><span style="color: #CC3300">&#39;rgb(50, 255, 100)&#39;</span>,
+            opacity<span style="color: #555555">=</span><span style="color: #FF6600">0.7</span>
+        ),
+        text <span style="color: #555555">=</span> pass_inspection[<span style="color: #CC3300">&#39;dba_name&#39;</span>]  <span style="color: #555555">+</span> <span style="color: #CC3300">&#39; &lt;br&gt; Pass &#39;</span>,
+        hoverinfo<span style="color: #555555">=</span><span style="color: #CC3300">&#39;text&#39;</span>
+    ),
+    go<span style="color: #555555">.</span>Scattermapbox(
+        lat<span style="color: #555555">=</span>fail_inspection[<span style="color: #CC3300">&#39;latitude&#39;</span>],
+        lon<span style="color: #555555">=</span>fail_inspection[<span style="color: #CC3300">&#39;longitude&#39;</span>],
+        mode<span style="color: #555555">=</span><span style="color: #CC3300">&#39;markers&#39;</span>,
+        marker<span style="color: #555555">=</span>go<span style="color: #555555">.</span>scattermapbox<span style="color: #555555">.</span>Marker(
+            size<span style="color: #555555">=</span><span style="color: #FF6600">12</span>, 
+            color<span style="color: #555555">=</span><span style="color: #CC3300">&#39;rgb(255, 0, 0)&#39;</span>,
+            opacity<span style="color: #555555">=</span><span style="color: #FF6600">0.7</span>
+        ),
+         text <span style="color: #555555">=</span> fail_inspection[<span style="color: #CC3300">&#39;dba_name&#39;</span>] <span style="color: #555555">+</span> <span style="color: #CC3300">&#39; &lt;br&gt; Fail &#39;</span>,
+         hoverinfo<span style="color: #555555">=</span><span style="color: #CC3300">&#39;text&#39;</span>
+    )   
+]
+
+
+layout <span style="color: #555555">=</span> go<span style="color: #555555">.</span>Layout(
+    title <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;Chicago Food Insepections&quot;</span>,
+    autosize<span style="color: #555555">=</span><span style="color: #336666">True</span>,
+    showlegend<span style="color: #555555">=</span><span style="color: #336666">False</span>,
+    hovermode<span style="color: #555555">=</span><span style="color: #CC3300">&#39;closest&#39;</span>,
+    mapbox<span style="color: #555555">=</span>go<span style="color: #555555">.</span>layout<span style="color: #555555">.</span>Mapbox(
+        accesstoken<span style="color: #555555">=</span>mapbox_access_token,
+        bearing<span style="color: #555555">=</span><span style="color: #FF6600">0</span>,
+        center<span style="color: #555555">=</span>go<span style="color: #555555">.</span>layout<span style="color: #555555">.</span>mapbox<span style="color: #555555">.</span>Center(
+            lat<span style="color: #555555">=</span><span style="color: #FF6600">41.9</span>,
+            lon<span style="color: #555555">=-</span><span style="color: #FF6600">87.6</span>
+        ),
+        pitch<span style="color: #555555">=</span><span style="color: #FF6600">0</span>,
+        zoom<span style="color: #555555">=</span><span style="color: #FF6600">9</span>,
+        style<span style="color: #555555">=</span><span style="color: #CC3300">&#39;light&#39;</span>
+    ),
+)
+
+fig <span style="color: #555555">=</span> go<span style="color: #555555">.</span>Figure(data<span style="color: #555555">=</span>data_pass, layout<span style="color: #555555">=</span>layout)
+
+py<span style="color: #555555">.</span>iplot(fig, filename<span style="color: #555555">=</span><span style="color: #CC3300">&#39;Chicago&#39;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>High five! You successfully sent some data to your account on plotly. View your plot in your browser at https://plot.ly/~dipakrimal/0 or inside your plot.ly account where it is named &#39;Chicago&#39;
+</pre></div>
+
+
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~dipakrimal/0.embed" height="525px" width="100%"></iframe>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>plt<span style="color: #555555">.</span>figure(figsize<span style="color: #555555">=</span>(<span style="color: #FF6600">12</span>, <span style="color: #FF6600">6</span>))
+ax <span style="color: #555555">=</span> sns<span style="color: #555555">.</span>countplot(y<span style="color: #555555">=</span><span style="color: #CC3300">&quot;inspection_type&quot;</span>, hue<span style="color: #555555">=</span><span style="color: #CC3300">&quot;results&quot;</span>, data<span style="color: #555555">=</span>food_data)
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot; Types of Inspections &quot;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;Figure size 864x432 with 0 Axes&amp;gt;
+
+
+
+
+
+
+Text(0.5, 1.0, &#39; Types of Inspections &#39;)
+</pre></div>
+
+
+<p><img alt="png" src="../output_28_2.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>plt<span style="color: #555555">.</span>figure(figsize<span style="color: #555555">=</span>(<span style="color: #FF6600">12</span>, <span style="color: #FF6600">6</span>))
+ax <span style="color: #555555">=</span> sns<span style="color: #555555">.</span>countplot(y<span style="color: #555555">=</span><span style="color: #CC3300">&quot;inspection_type&quot;</span>, data<span style="color: #555555">=</span>pass_inspection)
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot; Types of Inspections for facilities that passed the inspection &quot;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;Figure size 864x432 with 0 Axes&amp;gt;
+
+
+
+
+
+
+Text(0.5, 1.0, &#39; Types of Inspections for facilities that passed the inspection &#39;)
+</pre></div>
+
+
+<p><img alt="png" src="../output_29_2.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>plt<span style="color: #555555">.</span>figure(figsize<span style="color: #555555">=</span>(<span style="color: #FF6600">12</span>, <span style="color: #FF6600">6</span>))
+ax <span style="color: #555555">=</span> sns<span style="color: #555555">.</span>countplot(y<span style="color: #555555">=</span><span style="color: #CC3300">&quot;inspection_type&quot;</span>, data<span style="color: #555555">=</span>fail_inspection)
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot; Types of Inspections for facilities that failed the inspection &quot;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;Figure size 864x432 with 0 Axes&amp;gt;
+
+
+
+
+
+
+Text(0.5, 1.0, &#39; Types of Inspections for facilities that failed the inspection &#39;)
+</pre></div>
+
+
+<p><img alt="png" src="../output_30_2.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>data_pass_fail<span style="color: #555555">=</span>food_data[food_data[<span style="color: #CC3300">&#39;results&#39;</span>] <span style="color: #555555">&lt;</span> <span style="color: #FF6600">3</span>]
+plt<span style="color: #555555">.</span>figure(figsize<span style="color: #555555">=</span>(<span style="color: #FF6600">18</span>, <span style="color: #FF6600">6</span>))
+g <span style="color: #555555">=</span> sns<span style="color: #555555">.</span>catplot(x<span style="color: #555555">=</span><span style="color: #CC3300">&quot;risk_type_cat&quot;</span>, y<span style="color: #555555">=</span><span style="color: #CC3300">&quot;results&quot;</span>, kind<span style="color: #555555">=</span><span style="color: #CC3300">&quot;violin&quot;</span>, inner<span style="color: #555555">=</span><span style="color: #336666">None</span>, data<span style="color: #555555">=</span>data_pass_fail)
+sns<span style="color: #555555">.</span>swarmplot(x<span style="color: #555555">=</span><span style="color: #CC3300">&quot;risk_type_cat&quot;</span>, y<span style="color: #555555">=</span><span style="color: #CC3300">&quot;results&quot;</span>, color<span style="color: #555555">=</span><span style="color: #CC3300">&quot;k&quot;</span>, size<span style="color: #555555">=</span><span style="color: #FF6600">3</span>, data<span style="color: #555555">=</span>data_pass_fail, ax<span style="color: #555555">=</span>g<span style="color: #555555">.</span>ax);
+<span style="color: #0099FF; font-style: italic">#ax = sns.swarmplot(x= &quot;risk_type_cat&quot;, y=&quot;results&quot;, hue=&#39;inspection_type_cat&#39;, data=data_pass_fail, kind=&#39;bar&#39;)</span>
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot;risk type vs result &quot;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;Figure size 1296x432 with 0 Axes&amp;gt;
+
+
+
+
+
+
+&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x1a2ada4358&amp;gt;
+
+
+
+
+
+
+Text(0.5, 1.0, &#39;risk type vs result &#39;)
+
+
+
+
+&amp;lt;Figure size 1296x432 with 0 Axes&amp;gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_31_4.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
