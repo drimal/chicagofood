@@ -11,8 +11,8 @@ We used city of Chicago's Socrata Open Data (SODA) API to access food inspection
 2. 311 sanitation Complaints
 3. Burglaries from crime data
 4. Weather (5 day moving average of daily maximums)
-5) Business license
-6) Yelp business ratings
+5. Business license
+6. Yelp business ratings
 
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
